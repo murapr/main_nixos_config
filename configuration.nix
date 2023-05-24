@@ -245,16 +245,19 @@
   tailscale
   any-nix-shell
   inputs.agenix.packages.x86_64-linux.default
+  firejail
   ];
+
   programs.fish.promptInit = ''
     any-nix-shell fish --info-right | source
   '';
   programs.fish.enable = true;
   programs.adb.enable = true;
   programs.java.enable = true;
-  programs.steam = {
-  	enable = true;
-  };
+  programs.steam.enable = true;
+
+  programs.firejail.enable = true;
+  
   services.tailscale.enable = true;
   
   services.dnscrypt-proxy2 = {
